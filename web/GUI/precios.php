@@ -39,7 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		   <a class="toggleMenu" href="#">Menu</a>
 			 <ul class="nav">
 			   <li><a href="index.html">Home</a></li>
-			   <li class="active" ><a href="pricing.html">Precios</a></li>
+			   <li class="active" ><a href="precios.php">Precios</a></li>
 			   <li><a href="login.php">Administracion	</a></li>
 			 </ul>
 			  <script type="text/javascript" src="js/nav.js"></script>

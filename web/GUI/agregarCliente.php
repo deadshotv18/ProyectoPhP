@@ -23,7 +23,6 @@
 			 <ul class="nav">
 			   <li><a href="adminIndex.php">Home</a></li>
 			   <li class="active"><a href="agregarCliente.php">Agregar Cliente</a></li>
-			   <li><a href="agregarSuscripcion.php">Agregar Suscripcion</a></li>
 			   <li><a href="../GUI/index.html">Salir</a></li>
 			 </ul>
 			  <script type="text/javascript" src="js/nav.js"></script>
@@ -34,14 +33,14 @@
 	<!-- end menu -->
     <div class="main">
 			<div class="register-top-grid">
-				<form action="controlCliente.php" method="POST">
+				<form action="../Control/clienteControl.php" method="POST">
 				<h3>INFORMACION DEL CLIENTE</h3>
 					<span>RUT<label>*</label></span>
 					<input type="text" name="rut"> 
 					<span>nombre<label>*</label></span>
 					<input type="text" name="nombre"> 
 					<span>membresia<label>*</label></span>
-					<select>
+					<select name="tipoMembresia">
 					<option value="gratis">gratis</option>
 					<option value="30_b">30_basico</option>
 					<option value="30_p">30_premium</option>
@@ -52,8 +51,8 @@
                       $( "#datepicker" ).datepicker();
                       });
                      </script>
-					<p>Date: <input type="text" id="datepicker" name="fecha"></p>					 
-					<input type="submit" name="logear" class="button" value="Login">
+					<input type="text" id="datepicker" name="fecha">					 
+					<input type="submit" name="Agregar" class="button" value="Agregar">
 			   </form>
 			</div>
 	  </div>

@@ -35,9 +35,10 @@
 			  $resul=mysql_fetch_row($vector);
 			  $userName=$resul[0];
 			  $password=$resul[1];
-		      $rol=$resul[2];
+		      $perfil=$resul[2];
 			if($usuario==$userName&&$clave==$password){
-					$valid=true;
+			 $valid=true;
+			 $this->setRol($perfil);
 			 }
 		  }
 		  return $valid;  

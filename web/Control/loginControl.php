@@ -11,8 +11,12 @@
    {  $login=new Login();//Solicitar memoria al SO del servidor
       $login->Login($usuario,$clave);
 	  $valid=$login->identificar($usuario,$clave);
-   if($valid)
-	   echo "login valido";
+   if($valid){
+	   session_start();
+       $_SESSION['user']=$usuario;
+	   $_SESSION['perfil']=$login->getRol();
+	   header('Location: ../GUI/adminIndex.php');
+	}
    else
 		echo "login invalido";
    }

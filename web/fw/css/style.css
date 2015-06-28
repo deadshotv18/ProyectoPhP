@@ -3387,7 +3387,7 @@ fieldset.input input[type="submit"]:hover {
 	color:#00BFF0;
 }
 .button1 {
-	float: right;
+	float: left;
 	margin-top:8%;
 }
 .button1 input[type="submit"] {

@@ -21,8 +21,7 @@
 			 <ul class="nav">
 			   <li class="active"><a href="adminIndex.php">Home</a></li>
 			   <li><a href="agregarCliente.php">Agregar Cliente</a></li>
-			   <li><a href="agregarSuscripcion.php">Agregar Suscripcion</a></li>
-			   <li><a href="../GUI/index.html">Salir</a></li>
+				<li><a href="../GUI/index.html">Salir</a></li>
 			 </ul>
 			  <script type="text/javascript" src="js/nav.js"></script>
 		  </div><!-- end h_menu4 -->

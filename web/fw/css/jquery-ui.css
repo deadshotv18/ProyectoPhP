@@ -89,8 +89,12 @@ input.ui-button { padding: .4em 1em; }
 /* workarounds */
 button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra padding in Firefox */
 
-.ui-datepicker {width: 19.332%;
+.ui-datepicker {
+width: 19.332%;
 padding: 0 0em 0;
+ background: #333;
+   border: 1px solid #555;
+   color: #EEE;
 }
 .ui-datepicker .ui-datepicker-header {
 	position: relative;
@@ -285,7 +289,7 @@ body .ui-tooltip { border-width: 2px; }
 
 /* Interaction states
 ----------------------------------*/
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { /*{borderColorDefault}*/; background:none/*{bgColorDefault}*//*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/; font-weight: normal/*{fwDefault}*/; color: #fff/*{fcDefault}*/; }
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { /*{borderColorDefault}*/; background:#999 none/*{bgColorDefault}*//*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/; font-weight: normal/*{fwDefault}*/; color: #fff/*{fcDefault}*/; }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #fff/*{fcDefault}*/; text-decoration: none; }
 .ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited { color: #212121/*{fcHover}*/; text-decoration: none; }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #aaaaaa/*{borderColorActive}*/; background: #ffffff/*{bgColorActive}*/ url(ui-bg_glass_65_ffffff_1x400.png)/*{bgImgUrlActive}*/ 50%/*{bgActiveXPos}*/ 50%/*{bgActiveYPos}*/ repeat-x/*{bgActiveRepeat}*/; font-weight: normal/*{fwDefault}*/; color: #212121/*{fcActive}*/; }

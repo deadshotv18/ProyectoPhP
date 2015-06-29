@@ -19,9 +19,9 @@
 		 <div class="h_menu4"><!-- start h_menu4 -->
 		   <a class="toggleMenu" href="#">Menu</a>
 			 <ul class="nav">
-			   <li class="active"><a href="adminIndex.php">Home</a></li>
+			   <li><a href="adminIndex.php">Home</a></li>
 			   <li><a href="agregarCliente.php">Agregar Cliente</a></li>
-			   <li><a href="../GUI/listarCliente.php">Listar Clientes</a></li>
+			   <li class="active"><a href="../GUI/listarCliente.php">Listar Clientes</a></li>
 			   <li><a href="../GUI/index.html">Salir</a></li>
 			 </ul>
 			  <script type="text/javascript" src="js/nav.js"></script>
@@ -30,10 +30,11 @@
 	  </div>
 	</div>
 	<!-- end menu -->
-       <div class="header-text p">
+       <div class="container">
 	   <?php 
-		session_start();
-		echo "<h1>BIENVENIDO ".$_SESSION['perfil']."</h1>"
+		require_once("../Negocio/Cliente.php");
+		$cliente = new Cliente();
+		$cliente->listarCliente();
 		?>
 	   </div>
 	  <div class="main">
@@ -42,7 +43,7 @@
         <div class="copyright">
 		  <div class="container">
 		    <div class="copy">
-		        <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
+		        <p>Â© 2014 Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
 		    </div>
 			<div class="clear"></div>
 		  </div>

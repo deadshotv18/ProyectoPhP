@@ -23,6 +23,7 @@
 			 <ul class="nav">
 			   <li><a href="adminIndex.php">Home</a></li>
 			   <li class="active"><a href="agregarCliente.php">Agregar Cliente</a></li>
+			   <li><a href="../GUI/listarCliente.php">Listar Clientes</a></li>
 			   <li><a href="../GUI/index.html">Salir</a></li>
 			 </ul>
 			  <script type="text/javascript" src="js/nav.js"></script>
@@ -48,7 +49,7 @@
 					<span>Fecha inicio<label>*</label></span>
 					 <script>
                      $(function() {
-                      $( "#datepicker" ).datepicker();
+                      $( "#datepicker" ).datepicker({dateFormat: "dd-mm-yy"});
                       });
                      </script>
 					<input type="text" id="datepicker" name="fecha">					 

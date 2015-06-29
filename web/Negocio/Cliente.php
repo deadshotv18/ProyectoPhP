@@ -63,9 +63,18 @@
 	   public function listarCliente()
 	   {  $objConex=new Conexion();
 	      $objConex->abrirConexion();
-		  $sql="SELECT * FROM CLIENTE";		  
+		  $sql="SELECT * FROM CLIENTES C JOIN MEMBRESIAS M ON C.ID_MEMBRESIA=M.ID_MEMBRESIA ";		  
 		  $matrix=$objConex->ejecutarTransaccion($sql);
-		  return $matrix; 	   
+		  echo "<html>";
+		  echo "<table class=table border=1>";
+		  while($aux=mysql_fetch_row($matrix)){
+			  echo"<th>rut</th><th>nombre</th><th>membresia</th><th>inicio membresia</th><th>edicion</th>";
+			  echo "<tr><td>".$aux[0]."</td><td>".$aux[1]."</td><td>".$aux[2]."</td><td>".$aux[4]."</td><td><input type=submit name=Eliminar class=button value=Eliminar><input type=submit name=Editar class=button value=Editar></td></tr>";
+			  
+			}
+		  echo "</table>";
+		  echo "</html>";
+		   	   
 	   }    
   }
 ?>

@@ -18,6 +18,6 @@
 	   header('Location: ../GUI/adminIndex.php');
 	}
    else
-		echo "login invalido";
-   }
+		header('Location: ../GUI/login.php');
+	}
 ?>

@@ -20,8 +20,23 @@
 	  $membresia->Membresia($idMembresia,$fecha,$rut,$tipoMembresia);
 	  $clie=$cliente->registrarCliente();
 	  $membresia->registrarMembresia();
-	  if ($clie!="")  header("Location:../Vista/aviso.html");
-	  //echo "Transaccion Correcta";
-	  else           echo "Transaccion Fallada....";	     
-   }
+	  if ($clie!=""){  
+	   header("Location:../GUI/listarCliente.php");
+	   
+      }
+	}
+   if (isset($_POST["Eliminar"]) && $_POST["Eliminar"]=="Eliminar")
+   {
+	  $cliente=new Cliente();
+	  $id=$_POST["txtMembresia"];
+	  $cliente->eliminarCliente($id);
+	  $mensaje="borrado con exito!";
+	  alert($mensaje);
+	
+	}
+
+	 function alert($string)
+	{	
+		echo '<script type="text/javascript">alert("' . $string . '");</script>';
+	}
 ?>

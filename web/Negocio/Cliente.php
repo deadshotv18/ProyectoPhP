@@ -36,45 +36,30 @@
 		  return $clie;	   
 	   }
 	   
-	   public function modificarCliente()
+	  public function eliminarCliente($id_membresia)
 	   {  $objConex=new Conexion();
 	      $objConex->abrirConexion();
-		  $sql="UPDATE CLIENTE SET NOMBRE='".$this->nombre."',id_membresia='".$this->id_membresia."',FONO='".$this->fono."' WHERE(RUT='".$this->rut."')";		  
+		  $sql="DELETE FROM MEMBRESIAS WHERE(ID_MEMBRESIA='".$id_membresia."')";		  
 		  $clie=$objConex->ejecutarTransaccion($sql);
-		  return $clie;		   
-	   }
-	   
-	   public function eliminarCliente($rut)
-	   {  $objConex=new Conexion();
-	      $objConex->abrirConexion();
-		  $sql="DELETE FROM CLIENTE WHERE(RUT='".$rut."')";		  
+		  $sql="DELETE FROM CLIENTES WHERE(ID_MEMBRESIA='".$id_membresia."')";		  
 		  $clie=$objConex->ejecutarTransaccion($sql);
-		  return $clie;	   
-	   }
+		}
 
-       public function consultarCliente($rut)
-	   {  $objConex=new Conexion();
-	      $objConex->abrirConexion();
-		  $sql="SELECT * FROM CLIENTE WHERE(RUT='".$rut."')";		  
-		  $vector=$objConex->ejecutarTransaccion($sql);
-		  return $vector;  
-	   }
-	   
 	   public function listarCliente()
 	   {  $objConex=new Conexion();
 	      $objConex->abrirConexion();
 		  $sql="SELECT * FROM CLIENTES C JOIN MEMBRESIAS M ON C.ID_MEMBRESIA=M.ID_MEMBRESIA ";		  
 		  $matrix=$objConex->ejecutarTransaccion($sql);
-		  echo "<html>";
+		  
+		  echo "<form action=../Control/clienteControl.php method=POST>";
 		  echo "<table class=table border=1>";
+		  echo"<th>rut</th><th>nombre</th><th>membresia</th><th>inicio membresia</th><th>edicion</th>";
+		  
 		  while($aux=mysql_fetch_row($matrix)){
-			  echo"<th>rut</th><th>nombre</th><th>membresia</th><th>inicio membresia</th><th>edicion</th>";
-			  echo "<tr><td>".$aux[0]."</td><td>".$aux[1]."</td><td>".$aux[2]."</td><td>".$aux[4]."</td><td><input type=submit name=Eliminar class=button value=Eliminar><input type=submit name=Editar class=button value=Editar></td></tr>";
-			  
+			  			  echo "<tr><td>".$aux[0]."</td><td>".$aux[1]."</td><td><input type=text name=txtMembresia value=".$aux[3]." readonly><td>".$aux[4]."</td><td><input type=submit name=Eliminar class=button value=Eliminar></td></tr>";
 			}
 		  echo "</table>";
-		  echo "</html>";
-		   	   
-	   }    
+		  echo "</form>";
+		}    
   }
 ?>
